@@ -22,12 +22,12 @@ function renderTodos() {
 
         todoList.appendChild(li);
     });
-} // ✅ Correctly closed renderTodos()
+}
 
 // Function to add a new todo
 function addTodo(event) {
     event.preventDefault(); // Prevent form submission 
-    const newTodo = todoInput.value.trim(); // ✅ Fixed `.ValueMax`
+    const newTodo = todoInput.value.trim();
     if (newTodo) {
         todos.push(newTodo);
         todoInput.value = ''; // Clear the input 
@@ -37,7 +37,7 @@ function addTodo(event) {
 
 // Function to edit a todo
 function editTodo(index) {
-    const updatedTodo = prompt('Edit your todo:', todos[index]); // ✅ Removed `{0`
+    const updatedTodo = prompt('Edit your todo:', todos[index]); // 
     if (updatedTodo !== null) {
         todos[index] = updatedTodo.trim();
         renderTodos();
@@ -46,7 +46,7 @@ function editTodo(index) {
 
 // Function to delete a todo
 function deleteTodo(index) {
-    if (confirm('Are you sure you want to delete this todo?')) { // ✅ Removed extra semicolon
+    if (confirm('Are you sure you want to delete this todo?')) { 
         todos.splice(index, 1);
         renderTodos();
     }
